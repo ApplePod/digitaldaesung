@@ -102,46 +102,87 @@
         </div>
       </div>
 
-      <div class="timeline" style="margin-top:20px;columns:2;column-gap:32px">
-        <div class="tl-item done">
-          <div class="tl-date">2026. 06. 01</div>
-          <div class="tl-title">계약 체결 · 착수</div>
-          <div class="tl-desc">외주용역계약 체결 · 계약금 30% · Android 개발 착수</div>
+      <div class="phase-block">
+        <div class="phase-block-title">개발 단계 일정 (06. 01 → 09. 17)</div>
+        <div class="phase-months">
+          <div class="phase-month">6월</div>
+          <div class="phase-month">7월</div>
+          <div class="phase-month">8월</div>
+          <div class="phase-month">9월</div>
         </div>
-        <div class="tl-item current">
-          <div class="tl-date">2026. 06. 17 ~ ★ 현재</div>
-          <div class="tl-title">PDF 뷰어 · 필기 엔진 우선 개발</div>
-          <div class="tl-desc">뷰어·필기 선행 착수 · API 명세는 병행 진행 중</div>
+        <div class="phase-track">
+          <div class="phase-seg p-shell" style="width:12%">셸·서재</div>
+          <div class="phase-seg p-viewer" style="width:28%">PDF 뷰어 ★</div>
+          <div class="phase-seg p-ink" style="width:26%">필기 ★</div>
+          <div class="phase-seg p-sdk" style="width:14%">SDK</div>
+          <div class="phase-seg p-api" style="width:8%">API연동</div>
+          <div class="phase-seg p-qa" style="width:17%">QA·UAT</div>
+          <div class="phase-seg p-ship" style="width:5%">납품</div>
+          <div class="phase-today" style="left:15%"></div>
         </div>
-        <div class="tl-item current">
-          <div class="tl-date">2026. 06 ~ 07</div>
-          <div class="tl-title">앱 셸 · 서재 · API 명세</div>
-          <div class="tl-desc">프로필 · 서재/폴더링 · API 명세 협의 (진행중)</div>
+        <div class="phase-legend">
+          <span class="legend-shell">셸·서재</span>
+          <span class="legend-viewer">PDF 뷰어 (우선)</span>
+          <span class="legend-ink">필기 엔진 (우선)</span>
+          <span class="legend-sdk">AOS/iOS SDK</span>
+          <span class="legend-api">실서버 API</span>
+          <span class="legend-qa">통합 QA</span>
         </div>
-        <div class="tl-item future">
-          <div class="tl-date">2026. 07 ~ 08</div>
-          <div class="tl-title">백업 · SDK 패키징</div>
-          <div class="tl-desc">동기화 → AOS/iOS SDK · 실서버 API 연동</div>
+      </div>
+
+      <div class="phase-block" style="margin-top:14px">
+        <div class="phase-block-title">납품 이후 (계약서 기준)</div>
+        <div class="phase-track" style="height:28px">
+          <div class="phase-seg p-api" style="width:55%;font-size:9px">검수 90영업일 (~2027. 01)</div>
+          <div class="phase-seg p-qa" style="width:25%;font-size:9px">하자보수</div>
+          <div class="phase-seg p-ship" style="width:20%;font-size:9px">잔금 70%</div>
         </div>
-        <div class="tl-item future">
-          <div class="tl-date">2026. 08. 25 ~ 09. 16</div>
-          <div class="tl-title">통합 QA · UAT</div>
-          <div class="tl-desc">회귀 테스트 · 결함 수정 · 인수 지원</div>
+      </div>
+
+      <div class="timeline-grid">
+        <div class="timeline">
+          <div class="tl-item done">
+            <div class="tl-date">2026. 06. 01</div>
+            <div class="tl-title">계약 체결 · 착수</div>
+            <div class="tl-desc">외주용역계약 · 계약금 30% · Android 착수</div>
+          </div>
+          <div class="tl-item current">
+            <div class="tl-date">2026. 06. 17 ~ ★</div>
+            <div class="tl-title">PDF 뷰어 · 필기 우선</div>
+            <div class="tl-desc">뷰어·필기 선행 · API 명세 병행 진행중</div>
+          </div>
+          <div class="tl-item current">
+            <div class="tl-date">2026. 06 ~ 07</div>
+            <div class="tl-title">프로필 · 서재 · API</div>
+            <div class="tl-desc">앱 셸 · 폴더링 · 스펙 협의</div>
+          </div>
+          <div class="tl-item future">
+            <div class="tl-date">2026. 08</div>
+            <div class="tl-title">SDK · API 연동</div>
+            <div class="tl-desc">AOS/iOS SDK · 실서버 연결</div>
+          </div>
         </div>
-        <div class="tl-item future">
-          <div class="tl-date">2026. 09. 17</div>
-          <div class="tl-title">1차 납품 통보</div>
-          <div class="tl-desc">결과물 전달 · 검수 시작</div>
-        </div>
-        <div class="tl-item future">
-          <div class="tl-date">납품 후 90영업일</div>
-          <div class="tl-title">검수 기간</div>
-          <div class="tl-desc">하자 보수 60일 · 묵시 승인 가능</div>
-        </div>
-        <div class="tl-item future">
-          <div class="tl-date">검수 종료 후</div>
-          <div class="tl-title">최종 납품 · 잔금 · 서비스</div>
-          <div class="tl-desc">잔금 70% · 서비스 시작 180일 이내</div>
+        <div class="timeline">
+          <div class="tl-item future">
+            <div class="tl-date">2026. 08. 25 ~ 09. 16</div>
+            <div class="tl-title">통합 QA · UAT</div>
+            <div class="tl-desc">회귀 · 성능 · 인수 테스트</div>
+          </div>
+          <div class="tl-item future">
+            <div class="tl-date">2026. 09. 17</div>
+            <div class="tl-title">1차 납품 통보</div>
+            <div class="tl-desc">결과물 전달 · 검수 시작</div>
+          </div>
+          <div class="tl-item future">
+            <div class="tl-date">+ 90영업일</div>
+            <div class="tl-title">검수 · 최종 납품</div>
+            <div class="tl-desc">하자보수 60일 · 묵시승인 가능</div>
+          </div>
+          <div class="tl-item future">
+            <div class="tl-date">검수 완료 후</div>
+            <div class="tl-title">잔금 70% · 서비스</div>
+            <div class="tl-desc">₩57,400,000 · 오픈 180일 이내</div>
+          </div>
         </div>
       </div>
     </div>
@@ -154,9 +195,15 @@
       <p class="eyebrow">WBS · Development Schedule</p>
       <h2>개발 단계별 일정 (2026. 06. 01 → 09. 17)</h2>
 
-      <div style="font-size:11px;color:var(--muted);margin-bottom:8px;display:grid;grid-template-columns:140px 100px 1fr;gap:12px">
-        <span>단계</span><span>기간</span><span>06 ─────── 07 ─────── 08 ───── 09</span>
-      </div>
+      <div class="wbs-chart">
+        <div class="wbs-months">
+          <span>단계</span><span>기간</span>
+          <div class="month-cells">
+            <span>6월</span><span>7월</span><span>8월</span><span>9월</span>
+          </div>
+        </div>
+        <div class="wbs-rows">
+          <div class="wbs-today-line"></div>
 
       <div class="wbs-row">
         <span>프로필·서재</span><span>06.01–14</span>
@@ -164,35 +211,38 @@
       </div>
       <div class="wbs-row">
         <span>PDF 뷰어 ★</span><span>06.17–07.15</span>
-        <div class="wbs-bar-wrap"><div class="wbs-bar" style="left:15%;width:22%"></div></div>
+        <div class="wbs-bar-wrap"><div class="wbs-bar" style="left:15%;width:28%"></div></div>
       </div>
       <div class="wbs-row">
         <span>필기 개발 ★</span><span>06.23–07.25</span>
-        <div class="wbs-bar-wrap"><div class="wbs-bar ink" style="left:20%;width:24%"></div></div>
+        <div class="wbs-bar-wrap"><div class="wbs-bar ink" style="left:20%;width:30%"></div></div>
       </div>
       <div class="wbs-row">
         <span>API 명세</span><span>06.10–07.31</span>
-        <div class="wbs-bar-wrap"><div class="wbs-bar api" style="left:8%;width:28%"></div></div>
+        <div class="wbs-bar-wrap"><div class="wbs-bar api" style="left:8%;width:35%"></div></div>
       </div>
       <div class="wbs-row">
-        <span>백업·동기화</span><span>08.18–22</span>
-        <div class="wbs-bar-wrap"><div class="wbs-bar" style="left:71%;width:5%"></div></div>
+        <span>백업·동기화</span><span>07.28–08.01</span>
+        <div class="wbs-bar-wrap"><div class="wbs-bar" style="left:52%;width:6%"></div></div>
       </div>
       <div class="wbs-row">
         <span>안드 필기 SDK</span><span>08.04–15</span>
-        <div class="wbs-bar-wrap"><div class="wbs-bar sdk" style="left:60%;width:11%"></div></div>
+        <div class="wbs-bar-wrap"><div class="wbs-bar sdk" style="left:58%;width:12%"></div></div>
       </div>
       <div class="wbs-row">
         <span>iOS 필기 SDK</span><span>08.18–29</span>
-        <div class="wbs-bar-wrap"><div class="wbs-bar sdk" style="left:72%;width:11%"></div></div>
+        <div class="wbs-bar-wrap"><div class="wbs-bar sdk" style="left:72%;width:12%"></div></div>
       </div>
       <div class="wbs-row">
         <span>API 연동</span><span>09.01–12</span>
-        <div class="wbs-bar-wrap"><div class="wbs-bar api" style="left:83%;width:10%"></div></div>
+        <div class="wbs-bar-wrap"><div class="wbs-bar api" style="left:83%;width:11%"></div></div>
       </div>
       <div class="wbs-row">
         <span>통합 QA · UAT</span><span>08.25–09.17</span>
-        <div class="wbs-bar-wrap"><div class="wbs-bar qa" style="left:78%;width:22%"></div></div>
+        <div class="wbs-bar-wrap"><div class="wbs-bar qa" style="left:76%;width:24%"></div></div>
+      </div>
+
+        </div>
       </div>
 
       <div class="note-box">

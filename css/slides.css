@@ -375,6 +375,11 @@ h3 {
   border-bottom: 1px solid var(--border);
 }
 
+.phase-track-wrap {
+  position: relative;
+  padding-top: 20px;
+}
+
 .phase-track {
   display: flex;
   width: 100%;
@@ -411,25 +416,34 @@ h3 {
 
 .phase-today {
   position: absolute;
-  top: -4px;
-  bottom: -4px;
+  top: 0;
+  bottom: 0;
   width: 2px;
   background: var(--amber);
-  box-shadow: 0 0 8px var(--amber);
   transform: translateX(-50%);
-  z-index: 2;
+  z-index: 3;
+  pointer-events: none;
 }
 
-.phase-today::after {
-  content: "오늘";
+.phase-today::before {
+  content: "오늘 6/17";
   position: absolute;
-  top: -18px;
+  bottom: 100%;
   left: 50%;
   transform: translateX(-50%);
-  font-size: 9px;
+  margin-bottom: 4px;
+  font-size: 10px;
   font-weight: 700;
   color: var(--amber);
   white-space: nowrap;
+  background: var(--bg);
+  padding: 1px 6px;
+  border-radius: 4px;
+  border: 1px solid rgba(245, 158, 11, 0.35);
+}
+
+.phase-today::after {
+  display: none;
 }
 
 .phase-legend {
@@ -472,14 +486,51 @@ h3 {
 
 /* WBS 월 눈금 + 오늘 표시 */
 .wbs-chart {
+  --wbs-col1: 140px;
+  --wbs-col2: 100px;
+  --wbs-gap: 12px;
   position: relative;
   margin-bottom: 4px;
 }
 
+.wbs-gantt-overlay {
+  position: absolute;
+  top: 22px;
+  bottom: 0;
+  left: calc(var(--wbs-col1) + var(--wbs-col2) + var(--wbs-gap) * 2);
+  right: 0;
+  pointer-events: none;
+  z-index: 4;
+}
+
+.gantt-today {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--amber);
+  transform: translateX(-50%);
+}
+
+.gantt-today::before {
+  content: "오늘 6/17";
+  position: absolute;
+  top: -2px;
+  left: 6px;
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--amber);
+  white-space: nowrap;
+  background: var(--bg);
+  padding: 1px 6px;
+  border-radius: 4px;
+  border: 1px solid rgba(245, 158, 11, 0.35);
+}
+
 .wbs-months {
   display: grid;
-  grid-template-columns: 140px 100px 1fr;
-  gap: 12px;
+  grid-template-columns: var(--wbs-col1) var(--wbs-col2) 1fr;
+  gap: var(--wbs-gap);
   font-size: 10px;
   color: var(--muted);
   margin-bottom: 4px;
@@ -505,29 +556,6 @@ h3 {
     rgba(36, 48, 68, 0.8) calc(25% - 1px),
     rgba(36, 48, 68, 0.8) 25%
   );
-}
-
-.wbs-today-line {
-  position: absolute;
-  top: -20px;
-  bottom: -4px;
-  left: 15%;
-  width: 2px;
-  background: var(--amber);
-  opacity: 0.9;
-  z-index: 3;
-  pointer-events: none;
-}
-
-.wbs-today-line::before {
-  content: "오늘";
-  position: absolute;
-  top: 0;
-  left: 4px;
-  font-size: 9px;
-  font-weight: 700;
-  color: var(--amber);
-  white-space: nowrap;
 }
 
 /* ── 테이블 ── */
@@ -576,8 +604,8 @@ tr:last-child td {
 
 .wbs-row {
   display: grid;
-  grid-template-columns: 140px 100px 1fr;
-  gap: 12px;
+  grid-template-columns: var(--wbs-col1) var(--wbs-col2) 1fr;
+  gap: var(--wbs-gap);
   align-items: center;
   padding: 8px 0;
   border-bottom: 1px solid var(--border);

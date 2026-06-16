@@ -90,9 +90,8 @@
 
       <div class="bar-timeline">
         <div class="bar-track">
-          <div class="bar-fill" style="width:15%"></div>
+          <div class="bar-fill" style="width:14.8%"></div>
           <div class="bar-marker" style="left:0%" data-label="계약"></div>
-          <div class="bar-marker" style="left:15%;background:var(--amber)" data-label="오늘"></div>
           <div class="bar-marker" style="left:100%;background:var(--green)" data-label="납품"></div>
         </div>
         <div class="bar-labels">
@@ -110,15 +109,17 @@
           <div class="phase-month">8월</div>
           <div class="phase-month">9월</div>
         </div>
-        <div class="phase-track">
-          <div class="phase-seg p-shell" style="width:12%">셸·서재</div>
-          <div class="phase-seg p-viewer" style="width:28%">PDF 뷰어 ★</div>
-          <div class="phase-seg p-ink" style="width:26%">필기 ★</div>
-          <div class="phase-seg p-sdk" style="width:14%">SDK</div>
-          <div class="phase-seg p-api" style="width:8%">API연동</div>
-          <div class="phase-seg p-qa" style="width:17%">QA·UAT</div>
-          <div class="phase-seg p-ship" style="width:5%">납품</div>
-          <div class="phase-today" style="left:15%"></div>
+        <div class="phase-track-wrap">
+          <div class="phase-today" style="left:14.8%"></div>
+          <div class="phase-track">
+            <div class="phase-seg p-shell" style="width:12%">셸·서재</div>
+            <div class="phase-seg p-viewer" style="width:28%">PDF 뷰어 ★</div>
+            <div class="phase-seg p-ink" style="width:26%">필기 ★</div>
+            <div class="phase-seg p-sdk" style="width:14%">SDK</div>
+            <div class="phase-seg p-api" style="width:8%">API연동</div>
+            <div class="phase-seg p-qa" style="width:17%">QA·UAT</div>
+            <div class="phase-seg p-ship" style="width:5%">납품</div>
+          </div>
         </div>
         <div class="phase-legend">
           <span class="legend-shell">셸·서재</span>
@@ -202,8 +203,10 @@
             <span>6월</span><span>7월</span><span>8월</span><span>9월</span>
           </div>
         </div>
+        <div class="wbs-gantt-overlay" aria-hidden="true">
+          <div class="gantt-today" style="left:14.8%"></div>
+        </div>
         <div class="wbs-rows">
-          <div class="wbs-today-line"></div>
 
       <div class="wbs-row">
         <span>프로필·서재</span><span>06.01–14</span>
@@ -211,7 +214,7 @@
       </div>
       <div class="wbs-row">
         <span>PDF 뷰어 ★</span><span>06.17–07.15</span>
-        <div class="wbs-bar-wrap"><div class="wbs-bar" style="left:15%;width:28%"></div></div>
+        <div class="wbs-bar-wrap"><div class="wbs-bar" style="left:14.8%;width:28%"></div></div>
       </div>
       <div class="wbs-row">
         <span>필기 개발 ★</span><span>06.23–07.25</span>

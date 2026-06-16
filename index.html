@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>대성마이맥 필기앱 — 계약·납품 타임라인</title>
+  <link rel="stylesheet" href="css/slides.css" />
+</head>
+<body>
+
+  <nav class="screen-nav">
+    <span class="brand">대성마이맥 × 뉴런소프트</span>
+    <span class="hint">← → 또는 스크롤로 이동 · <span id="slide-counter">1 / 8</span></span>
+    <button id="print-btn" type="button">PDF 저장 (인쇄)</button>
+  </nav>
+
+  <!-- SLIDE 1: 표지 -->
+  <section class="slide" id="s1">
+    <div class="slide-inner">
+      <p class="eyebrow">Contract → Delivery Timeline</p>
+      <h1>대성마이맥 필기앱<br>계약 · 일정 · 납품 로드맵</h1>
+      <p class="subtitle">외주용역계약서(최종) · WBS · 검수 기준 통합 정리</p>
+      <div class="cover-meta">
+        <div class="tag"><strong>발주</strong>㈜디지털대성</div>
+        <div class="tag"><strong>수행</strong>㈜뉴런소프트</div>
+        <div class="tag"><strong>계약금액</strong>₩82,000,000 <span style="color:var(--muted);font-size:12px">(VAT 별도)</span></div>
+        <div class="tag"><strong>1차 납품 목표</strong>2026. 09. 17</div>
+        <div class="tag"><strong>기준일</strong>2026. 06. 17</div>
+      </div>
+    </div>
+    <div class="slide-footer">대성마이맥 필기앱 구축 및 기술공급 · 뉴런소프트</div>
+  </section>
+
+  <!-- SLIDE 2: 계약 개요 -->
+  <section class="slide" id="s2">
+    <div class="slide-inner">
+      <p class="eyebrow">Contract Summary</p>
+      <h2>계약 핵심 조건</h2>
+      <div class="grid-3" style="margin-bottom:16px">
+        <div class="card">
+          <div class="label">용역명</div>
+          <div class="value" style="font-size:1rem">대성마이맥 필기앱<br>구축 및 기술공급</div>
+        </div>
+        <div class="card">
+          <div class="label">계약 기간</div>
+          <div class="value">~ 2027. 12. 31</div>
+          <div class="desc">계약 체결일 기준</div>
+        </div>
+        <div class="card">
+          <div class="label">개발 기간</div>
+          <div class="value">~ 2026. 09. 17</div>
+          <div class="desc">1차 개발 완료·납품</div>
+        </div>
+      </div>
+      <div class="grid-2">
+        <div class="card">
+          <div class="label">납품물</div>
+          <ul style="list-style:none;font-size:13px;color:var(--muted);margin-top:8px;line-height:1.8">
+            <li>① 필기 엔진 SDK (AOS / iOS)</li>
+            <li>② PDF 뷰어 및 필기 기능</li>
+            <li>③ 화면설계서 기반 앱 기능 구현</li>
+            <li>④ 연동 가이드 · 기술 문서</li>
+            <li>⑤ AOS · iOS 앱 실행파일 · 테스트 빌드</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="label">붙임 서류 (계약 범위)</div>
+          <ul style="list-style:none;font-size:13px;color:var(--muted);margin-top:8px;line-height:1.8">
+            <li>1. 용역계약 일반조건</li>
+            <li>2. 화면설계서 (3차)</li>
+            <li>3. 개발일정표 (WBS)</li>
+            <li>4. 견적서</li>
+          </ul>
+          <div class="note-box" style="margin-top:12px">
+            <strong>착수일</strong> = 계약 체결 + 계약금(30%) 지급일
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-footer">외주용역계약서 + 일반조건 (최종) · 2026. 05</div>
+  </section>
+
+  <!-- SLIDE 3: 전체 마스터 타임라인 -->
+  <section class="slide" id="s3">
+    <div class="slide-inner">
+      <p class="eyebrow">Master Timeline</p>
+      <h2>계약 → 납품 → 검수 → 서비스 전체 흐름</h2>
+
+      <div class="bar-timeline">
+        <div class="bar-track">
+          <div class="bar-fill" style="width:38%"></div>
+          <div class="bar-marker" style="left:0%" data-label="착수"></div>
+          <div class="bar-marker" style="left:38%;background:var(--amber)" data-label="오늘"></div>
+          <div class="bar-marker" style="left:72%" data-label="1차납품"></div>
+          <div class="bar-marker" style="left:100%" data-label="계약종료"></div>
+        </div>
+        <div class="bar-labels">
+          <span>2026. 04 착수</span>
+          <span>2026. 06. 17 (현재)</span>
+          <span>2026. 09. 17</span>
+          <span>2027. 12. 31</span>
+        </div>
+      </div>
+
+      <div class="timeline" style="margin-top:20px;columns:2;column-gap:32px">
+        <div class="tl-item done">
+          <div class="tl-date">2026. 04 ~ 05</div>
+          <div class="tl-title">계약 체결 · 착수</div>
+          <div class="tl-desc">계약금 30% · WBS 착수 (04.13~)</div>
+        </div>
+        <div class="tl-item done">
+          <div class="tl-date">2026. 04 ~ 06</div>
+          <div class="tl-title">앱 셸 · 서재 · PDF 뷰어 · 필기</div>
+          <div class="tl-desc">프로필 → 서재 → 뷰어 → 필기 엔진 이식</div>
+        </div>
+        <div class="tl-item current">
+          <div class="tl-date">2026. 06. 17 ★ 오늘</div>
+          <div class="tl-title">필기 개발 막바지</div>
+          <div class="tl-desc">OMR/스크랩 · 저장 정합성 · 안정화 (~06.19)</div>
+        </div>
+        <div class="tl-item future">
+          <div class="tl-date">2026. 06 ~ 08</div>
+          <div class="tl-title">백업 · SDK · API 연동</div>
+          <div class="tl-desc">동기화 → AOS/iOS SDK → 실서버 API</div>
+        </div>
+        <div class="tl-item future">
+          <div class="tl-date">2026. 08 ~ 09</div>
+          <div class="tl-title">통합 QA · UAT</div>
+          <div class="tl-desc">회귀 테스트 · 결함 수정 · 인수 지원</div>
+        </div>
+        <div class="tl-item future">
+          <div class="tl-date">2026. 09. 17</div>
+          <div class="tl-title">1차 납품 통보</div>
+          <div class="tl-desc">결과물 전달 · 검수 시작</div>
+        </div>
+        <div class="tl-item future">
+          <div class="tl-date">납품 후 90영업일</div>
+          <div class="tl-title">검수 기간</div>
+          <div class="tl-desc">하자 보수 60일 · 묵시 승인 가능</div>
+        </div>
+        <div class="tl-item future">
+          <div class="tl-date">검수 종료 후</div>
+          <div class="tl-title">최종 납품 · 잔금 · 서비스</div>
+          <div class="tl-desc">잔금 70% · 서비스 시작 180일 이내</div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-footer">전체 일정 — 계약서 제6·7조 · WBS 기준</div>
+  </section>
+
+  <!-- SLIDE 4: WBS 개발 일정 -->
+  <section class="slide" id="s4">
+    <div class="slide-inner">
+      <p class="eyebrow">WBS · Development Schedule</p>
+      <h2>개발 단계별 일정 (2026. 04. 13 → 09. 17)</h2>
+
+      <div style="font-size:11px;color:var(--muted);margin-bottom:8px;display:grid;grid-template-columns:140px 100px 1fr;gap:12px">
+        <span>단계</span><span>기간</span><span>04 ─────── 06 ─────── 08 ───── 09</span>
+      </div>
+
+      <div class="wbs-row">
+        <span>프로필</span><span>04.13–17</span>
+        <div class="wbs-bar-wrap"><div class="wbs-bar" style="left:0%;width:3%"></div></div>
+      </div>
+      <div class="wbs-row">
+        <span>서재·폴더링</span><span>04.20–24</span>
+        <div class="wbs-bar-wrap"><div class="wbs-bar" style="left:3%;width:4%"></div></div>
+      </div>
+      <div class="wbs-row">
+        <span>API 명세</span><span>04.27–05.08</span>
+        <div class="wbs-bar-wrap"><div class="wbs-bar api" style="left:7%;width:8%"></div></div>
+      </div>
+      <div class="wbs-row">
+        <span>PDF 뷰어</span><span>04.27–05.15</span>
+        <div class="wbs-bar-wrap"><div class="wbs-bar" style="left:7%;width:12%"></div></div>
+      </div>
+      <div class="wbs-row">
+        <span>필기 개발</span><span>05.18–06.19</span>
+        <div class="wbs-bar-wrap"><div class="wbs-bar ink" style="left:19%;width:14%"></div></div>
+      </div>
+      <div class="wbs-row">
+        <span>백업·동기화</span><span>06.22–26</span>
+        <div class="wbs-bar-wrap"><div class="wbs-bar" style="left:33%;width:3%"></div></div>
+      </div>
+      <div class="wbs-row">
+        <span>안드 필기 SDK</span><span>06.29–07.10</span>
+        <div class="wbs-bar-wrap"><div class="wbs-bar sdk" style="left:36%;width:6%"></div></div>
+      </div>
+      <div class="wbs-row">
+        <span>iOS 필기 SDK</span><span>07.13–07.24</span>
+        <div class="wbs-bar-wrap"><div class="wbs-bar sdk" style="left:43%;width:6%"></div></div>
+      </div>
+      <div class="wbs-row">
+        <span>안드 API 연결</span><span>07.27–08.07</span>
+        <div class="wbs-bar-wrap"><div class="wbs-bar api" style="left:50%;width:6%"></div></div>
+      </div>
+      <div class="wbs-row">
+        <span>iOS API 연결</span><span>08.10–08.21</span>
+        <div class="wbs-bar-wrap"><div class="wbs-bar api" style="left:57%;width:6%"></div></div>
+      </div>
+      <div class="wbs-row">
+        <span>통합 QA · UAT</span><span>08.21–09.17</span>
+        <div class="wbs-bar-wrap"><div class="wbs-bar qa" style="left:63%;width:12%"></div></div>
+      </div>
+
+      <div class="note-box">
+        <strong>현재 위치 (06.17)</strong> — 필기 개발 최종 구간 (시험 보조 OMR/스크랩, 저장 정합성, 대용량 안정화).
+        다음 주요 마일스톤: <strong>06.22 백업·동기화</strong> → <strong>06.29 Android SDK 패키징</strong>
+      </div>
+    </div>
+    <div class="slide-footer">개발일정표(WBS) · 2026. 04. 13 착수</div>
+  </section>
+
+  <!-- SLIDE 5: 대금 지급 -->
+  <section class="slide" id="s5">
+    <div class="slide-inner">
+      <p class="eyebrow">Payment Schedule</p>
+      <h2>대금 지급 일정</h2>
+
+      <table>
+        <thead>
+          <tr>
+            <th>구분</th>
+            <th>비율</th>
+            <th>금액 (VAT 별도)</th>
+            <th>지급 시점</th>
+            <th>상태</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>계약금</strong></td>
+            <td>30%</td>
+            <td>₩24,600,000</td>
+            <td>계약 체결 후 10영업일 이내</td>
+            <td><span class="badge badge-done">완료</span></td>
+          </tr>
+          <tr>
+            <td><strong>중도금</strong></td>
+            <td>—</td>
+            <td>—</td>
+            <td>별도 지급 없음</td>
+            <td><span class="badge badge-future">해당없음</span></td>
+          </tr>
+          <tr>
+            <td><strong>잔금</strong></td>
+            <td>70%</td>
+            <td>₩57,400,000</td>
+            <td>최종 검수 완료 후 10영업일 이내</td>
+            <td><span class="badge badge-future">검수 후</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="grid-2" style="margin-top:20px">
+        <div class="card">
+          <div class="label">지체상금 (을 부담)</div>
+          <div class="value" style="font-size:1rem">일 ₩164,000</div>
+          <div class="desc">계약금액 × 2/1,000 · 기간 종료 10일 전 연장 요청 필요</div>
+        </div>
+        <div class="card">
+          <div class="label">지연 면제 사유</div>
+          <div class="desc" style="font-size:13px;line-height:1.7;margin-top:4px">
+            ① 갑 자료 미제공 · 검토·의사결정 지연<br>
+            ② 천재지변 · 전산장애<br>
+            ③ 추가 요구사항 협의 기간
+          </div>
+        </div>
+      </div>
+
+      <div class="note-box">
+        <strong>유지보수</strong> — 별도 부속합의 (견적: 월 ₩3,000,000). OS 업데이트·호환성 대응은 하자보수 범위 외.
+      </div>
+    </div>
+    <div class="slide-footer">계약서 제9조 · 제10조</div>
+  </section>
+
+  <!-- SLIDE 6: 납품 · 검수 -->
+  <section class="slide" id="s6">
+    <div class="slide-inner">
+      <p class="eyebrow">Delivery &amp; Inspection</p>
+      <h2>납품 · 검수 · 최종 인수 프로세스</h2>
+
+      <div class="grid-2">
+        <div>
+          <div class="timeline">
+            <div class="tl-item future">
+              <div class="tl-date">2026. 09. 17</div>
+              <div class="tl-title">1차 납품 통보</div>
+              <div class="tl-desc">SDK · 앱 빌드 · 기술문서 전달 → 검수 시계 시작</div>
+            </div>
+            <div class="tl-item future">
+              <div class="tl-date">+ 90 영업일</div>
+              <div class="tl-title">검수 기간</div>
+              <div class="tl-desc">갑(대성)이 하자·미이행 서면 통지<br>미통지 시 → <strong>묵시 검수 완료</strong></div>
+            </div>
+            <div class="tl-item future">
+              <div class="tl-date">하자 발견 시 + 60일</div>
+              <div class="tl-title">하자 보수 (을)</div>
+              <div class="tl-desc">검수 중 발견된 결함 수정·보완</div>
+            </div>
+            <div class="tl-item future">
+              <div class="tl-date">검수 종료일</div>
+              <div class="tl-title">최종 납품</div>
+              <div class="tl-desc">검수 항목 수정·보완 <strong>모두 반영</strong> 후 완료</div>
+            </div>
+            <div class="tl-item future">
+              <div class="tl-date">검수 완료 + 10영업일</div>
+              <div class="tl-title">잔금 70% 지급</div>
+              <div class="tl-desc">₩57,400,000</div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="card" style="margin-bottom:14px">
+            <div class="label">검수 예상 종료 (참고)</div>
+            <div class="value" style="font-size:1.1rem">~ 2027. 01 중순</div>
+            <div class="desc">09.17 납품 + 90영업일 기준 추정<br>(공휴일·갑 검토 일정에 따라 변동)</div>
+          </div>
+          <div class="card">
+            <div class="label">서비스 시작일</div>
+            <div class="value" style="font-size:1.1rem">검수 종료 후 180일 이내</div>
+            <div class="desc" style="margin-top:10px;line-height:1.8">
+              <strong style="color:var(--green)">SDK 하자보수</strong> — 서비스 시작일 + 1년<br>
+              <strong style="color:var(--amber)">앱 버그·오동작</strong> — 서비스 시작일 + 90일<br>
+              <span style="color:var(--muted)">범위 외: OS 업데이트, 정책·디자인 변경, 제3자 이슈</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-footer">계약서 제7조 · 제8조</div>
+  </section>
+
+  <!-- SLIDE 7: 역할 분담 -->
+  <section class="slide" id="s7">
+    <div class="slide-inner">
+      <p class="eyebrow">Responsibility</p>
+      <h2>갑 · 을 역할 분담</h2>
+
+      <div class="role-cols">
+        <div class="role-box gab">
+          <h3>갑 — ㈜디지털대성</h3>
+          <ul>
+            <li>회원 · 로그인 · 권한 관리</li>
+            <li>서버 · API 개발 및 운영</li>
+            <li>어드민 (교재 업로드, 통계, 시험답안, 기기등록)</li>
+            <li>보안 정책 · 서비스 운영</li>
+            <li>빌드 · 배포 · 스토어 등록</li>
+            <li>요구사항 · API · 테스트 계정 제공</li>
+            <li>검수 · 인수</li>
+          </ul>
+        </div>
+        <div class="role-box eul">
+          <h3>을 — ㈜뉴런소프트</h3>
+          <ul>
+            <li>필기 엔진 SDK (AOS / iOS)</li>
+            <li>PDF 뷰어 · 필기 UI/UX 구현</li>
+            <li>화면설계서 기반 앱 기능</li>
+            <li>AOS · iOS 앱 클라이언트</li>
+            <li>SDK 연동 가이드 · 기술 문서</li>
+            <li>API 스펙 정의 · 협의</li>
+            <li>하자보수 (계약 범위 내)</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="note-box" style="margin-top:20px">
+        <strong>범위 외 변경</strong> — 기능 추가 · 정책 변경 · 디자인 변경은 별도 협의 후 범위·일정·비용 재산정 (별도 계약/합의서).
+        <strong>재위탁</strong> — 갑 사전 서면 동의 없이 제3자 위탁 불가.
+      </div>
+    </div>
+    <div class="slide-footer">계약서 제4조 · 제5조</div>
+  </section>
+
+  <!-- SLIDE 8: 마일스톤 체크리스트 -->
+  <section class="slide" id="s8">
+    <div class="slide-inner">
+      <p class="eyebrow">Milestone Checklist</p>
+      <h2>핵심 마일스톤 체크리스트</h2>
+
+      <table>
+        <thead>
+          <tr>
+            <th>마일스톤</th>
+            <th>목표일</th>
+            <th>산출물</th>
+            <th>상태</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>계약 체결 · 착수</td>
+            <td>2026. 04 ~ 05</td>
+            <td>계약서 · 계약금 · WBS 확정</td>
+            <td><span class="badge badge-done">완료</span></td>
+          </tr>
+          <tr>
+            <td>앱 셸 · 서재 · 뷰어</td>
+            <td>2026. 04 ~ 05</td>
+            <td>프로필 · 서재 · PDF 뷰어 MVP</td>
+            <td><span class="badge badge-done">완료</span></td>
+          </tr>
+          <tr>
+            <td>필기 엔진 이식</td>
+            <td>2026. 05 ~ 06</td>
+            <td>펜 · 지우개 · 오브젝트 · Undo · OMR</td>
+            <td><span class="badge badge-current">진행중</span></td>
+          </tr>
+          <tr>
+            <td>백업 · 동기화</td>
+            <td>2026. 06. 22 ~ 26</td>
+            <td>백업/복원 · API 연동</td>
+            <td><span class="badge badge-future">예정</span></td>
+          </tr>
+          <tr>
+            <td>필기 SDK 패키징</td>
+            <td>2026. 06. 29 ~ 07. 24</td>
+            <td>AOS · iOS SDK · Sample App</td>
+            <td><span class="badge badge-future">예정</span></td>
+          </tr>
+          <tr>
+            <td>실서버 API 연동</td>
+            <td>2026. 07 ~ 08</td>
+            <td>인증 · 서재 · 다운로드 · 동기화</td>
+            <td><span class="badge badge-future">예정</span></td>
+          </tr>
+          <tr>
+            <td>통합 QA · UAT</td>
+            <td>2026. 08. 21 ~ 09. 17</td>
+            <td>회귀 · 성능 · 인수 테스트</td>
+            <td><span class="badge badge-future">예정</span></td>
+          </tr>
+          <tr>
+            <td><strong>1차 납품 통보</strong></td>
+            <td><strong>2026. 09. 17</strong></td>
+            <td>전체 결과물 · 기술문서</td>
+            <td><span class="badge badge-contract">계약 기한</span></td>
+          </tr>
+          <tr>
+            <td>검수 완료 · 잔금</td>
+            <td>~ 2027. 01 (추정)</td>
+            <td>최종 납품 · ₩57,400,000</td>
+            <td><span class="badge badge-future">예정</span></td>
+          </tr>
+          <tr>
+            <td>서비스 오픈</td>
+            <td>검수 후 180일 이내</td>
+            <td>하자보수 시계 시작</td>
+            <td><span class="badge badge-future">예정</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="note-box">
+        Chrome 인쇄: <strong>Ctrl+P → 대상 PDF 저장 → 가로 · 배경 그래픽 켜기</strong> → 슬라이드 1장씩 PDF 생성
+      </div>
+    </div>
+    <div class="slide-footer">대성마이맥 필기앱 · 계약~납품 타임라인 · 2026. 06. 17 기준</div>
+  </section>
+
+  <script src="js/nav.js"></script>
+</body>
+</html>

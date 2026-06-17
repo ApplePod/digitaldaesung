@@ -11,7 +11,9 @@
   --text: #f1f5f9;
   --muted: #94a3b8;
   --border: #243044;
-  --slide-w: 1280px;
+  --content-max: 1080px;
+  --gutter-x: clamp(28px, 5vw, 64px);
+  --gutter-y: clamp(56px, 9vh, 80px);
   --slide-h: 720px;
 }
 
@@ -43,7 +45,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 20px;
+  padding: 10px var(--gutter-x);
   background: rgba(6, 10, 18, 0.92);
   backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--border);
@@ -82,7 +84,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 72px 24px 40px;
+  padding: calc(var(--gutter-y) + 16px) var(--gutter-x) var(--gutter-y);
   background: var(--bg);
   position: relative;
   overflow: hidden;
@@ -99,14 +101,12 @@ body {
 }
 
 .slide-inner {
-  width: min(var(--slide-w), 100%);
-  max-width: 100%;
+  width: 100%;
+  max-width: var(--content-max);
+  margin-inline: auto;
+  padding-inline: clamp(4px, 1.5vw, 16px);
   position: relative;
   z-index: 1;
-}
-
-.slide-inner--dense {
-  width: 100%;
 }
 
 .slide-footer {
@@ -114,6 +114,7 @@ body {
   bottom: 20px;
   left: 0;
   right: 0;
+  padding-inline: var(--gutter-x);
   text-align: center;
   font-size: 11px;
   color: var(--muted);
@@ -495,7 +496,8 @@ h3 {
 /* Master Timeline 슬라이드 — 단일 열 */
 .timeline-master {
   margin-top: 16px;
-  max-width: 720px;
+  max-width: 680px;
+  margin-inline: auto;
 }
 
 .timeline-master .tl-item {
@@ -584,7 +586,7 @@ table {
 }
 
 th, td {
-  padding: 10px 14px;
+  padding: 10px 16px;
   text-align: left;
   border-bottom: 1px solid var(--border);
 }
@@ -645,6 +647,7 @@ tr:last-child td {
   border: 1px solid var(--border);
   border-radius: 10px;
   margin-top: 4px;
+  padding: 2px;
 }
 
 .table-wrap table {
@@ -668,6 +671,8 @@ tr:last-child td {
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
   margin-bottom: 4px;
+  padding: 4px 2px;
+  border-radius: 10px;
 }
 
 .wbs-scroll .wbs-chart {
@@ -780,11 +785,12 @@ tr:last-child td {
 /* 태블릿 이하 */
 @media (max-width: 1024px) {
   :root {
-    --slide-w: 100%;
+    --content-max: 920px;
+    --gutter-x: clamp(28px, 6vw, 48px);
   }
 
   .slide {
-    padding: 64px 20px 48px;
+    padding: calc(var(--gutter-y) + 8px) var(--gutter-x) var(--gutter-y);
     align-items: flex-start;
     min-height: 100vh;
     min-height: 100dvh;
@@ -792,11 +798,15 @@ tr:last-child td {
     overflow: visible;
   }
 
+  .slide-inner {
+    padding-inline: clamp(8px, 2vw, 20px);
+  }
+
   .slide-inner--dense {
     max-height: calc(100dvh - 100px);
     overflow-y: auto;
     overscroll-behavior: contain;
-    padding-right: 4px;
+    padding-right: clamp(8px, 2vw, 16px);
   }
 
   .grid-3 {
@@ -816,6 +826,12 @@ tr:last-child td {
 
 /* 모바일 */
 @media (max-width: 768px) {
+  :root {
+    --content-max: 100%;
+    --gutter-x: clamp(24px, 7vw, 40px);
+    --gutter-y: clamp(48px, 8vh, 64px);
+  }
+
   html {
     scroll-snap-type: y proximity;
   }
@@ -823,7 +839,7 @@ tr:last-child td {
   .screen-nav {
     flex-wrap: wrap;
     gap: 8px 12px;
-    padding: max(8px, env(safe-area-inset-top)) 12px 8px;
+    padding: max(8px, env(safe-area-inset-top)) var(--gutter-x) 8px;
   }
 
   .screen-nav .brand {
@@ -846,7 +862,11 @@ tr:last-child td {
   }
 
   .slide {
-    padding: 56px 16px 44px;
+    padding: calc(var(--gutter-y) + 4px) var(--gutter-x) var(--gutter-y);
+  }
+
+  .slide-inner {
+    padding-inline: clamp(4px, 1.5vw, 12px);
   }
 
   h1 { font-size: clamp(1.65rem, 7vw, 2.2rem); }
@@ -926,8 +946,7 @@ tr:last-child td {
 
   .slide-footer {
     font-size: 10px;
-    padding: 0 12px;
-    bottom: 12px;
+    bottom: 16px;
   }
 
   .note-box {
@@ -938,6 +957,20 @@ tr:last-child td {
 
 /* 소형 모바일 */
 @media (max-width: 480px) {
+  :root {
+    --gutter-x: 24px;
+  }
+
+  .slide {
+    padding-left: max(var(--gutter-x), env(safe-area-inset-left));
+    padding-right: max(var(--gutter-x), env(safe-area-inset-right));
+  }
+
+  .screen-nav {
+    padding-left: max(var(--gutter-x), env(safe-area-inset-left));
+    padding-right: max(var(--gutter-x), env(safe-area-inset-right));
+  }
+
   .screen-nav .hint {
     display: none;
   }
@@ -958,9 +991,17 @@ tr:last-child td {
 
 /* 데스크톱 — 슬라이드 중앙 정렬 */
 @media (min-width: 1025px) {
+  :root {
+    --content-max: 1040px;
+  }
+
   .slide {
     align-items: center;
     overflow: hidden;
+  }
+
+  .slide-inner {
+    padding-inline: 20px;
   }
 
   .slide-inner--dense {
@@ -1021,7 +1062,7 @@ tr:last-child td {
     height: 100vh;
     min-height: 100vh;
     max-height: 100vh;
-    padding: 28px 36px 24px;
+    padding: 32px 48px 28px;
     page-break-after: always;
     break-after: page;
     page-break-inside: avoid;
@@ -1029,6 +1070,11 @@ tr:last-child td {
     overflow: hidden;
     background: var(--bg) !important;
     align-items: center;
+  }
+
+  .slide-inner {
+    max-width: 100%;
+    padding-inline: 16px;
   }
 
   .slide-inner--dense {

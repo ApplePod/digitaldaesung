@@ -493,15 +493,37 @@ h3 {
   columns: unset;
 }
 
-/* Master Timeline 슬라이드 — 단일 열 */
+/* Master Timeline 슬라이드 — 2단 + 축 정렬 */
 .timeline-master {
-  margin-top: 16px;
-  max-width: 680px;
-  margin-inline: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px 40px;
+  margin-top: 20px;
+  max-width: 100%;
 }
 
-.timeline-master .tl-item {
-  padding-bottom: 16px;
+.timeline-master-col {
+  --tl-axis: 14px;
+  padding-left: calc(var(--tl-axis) + 18px);
+}
+
+.timeline-master-col::before {
+  left: var(--tl-axis);
+  transform: translateX(-50%);
+}
+
+.timeline-master-col .tl-item {
+  padding: 0 0 14px 0;
+}
+
+.timeline-master-col .tl-item:last-child {
+  padding-bottom: 0;
+}
+
+.timeline-master-col .tl-item::before {
+  left: var(--tl-axis);
+  top: 7px;
+  transform: translateX(-50%);
 }
 
 /* WBS 월 눈금 + 오늘 표시 */
@@ -888,8 +910,13 @@ tr:last-child td {
   .grid-2,
   .grid-3,
   .role-cols,
-  .timeline-grid {
+  .timeline-grid,
+  .timeline-master {
     grid-template-columns: 1fr;
+  }
+
+  .timeline-master {
+    gap: 20px;
   }
 
   .grid-3 .card:last-child {
@@ -900,11 +927,7 @@ tr:last-child td {
     padding: 14px 16px;
   }
 
-  .timeline-master {
-    max-width: none;
-  }
-
-  .timeline-master .tl-item {
+  .timeline-master-col .tl-item {
     padding-bottom: 12px;
   }
 

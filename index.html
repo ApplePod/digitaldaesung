@@ -2,16 +2,16 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>대성마이맥 필기앱 — 계약·납품 타임라인</title>
   <link rel="stylesheet" href="css/slides.css" />
 </head>
 <body>
 
-  <nav class="screen-nav">
+  <nav class="screen-nav" aria-label="슬라이드 네비게이션">
     <span class="brand">대성마이맥 × 뉴런소프트</span>
-    <span class="hint">← → 또는 스크롤로 이동 · <span id="slide-counter">1 / 8</span></span>
-    <button id="print-btn" type="button">PDF 저장 (인쇄)</button>
+    <span class="hint" aria-hidden="true">← → · 스와이프 · <span id="slide-counter">1 / 8</span></span>
+    <button id="print-btn" type="button" aria-label="PDF로 저장">PDF 저장</button>
   </nav>
 
   <!-- SLIDE 1: 표지 -->
@@ -25,8 +25,8 @@
         <div class="tag"><strong>수행</strong>㈜뉴런소프트</div>
         <div class="tag"><strong>계약 체결</strong>2026. 06. 01</div>
         <div class="tag"><strong>1차 납품</strong>2026. 09. 17</div>
-        <div class="tag"><strong>계약금액</strong>₩82,000,000 <span style="color:var(--muted);font-size:12px">(VAT 별도)</span></div>
-        <div class="tag"><strong>기준일</strong>2026. 06. 17 <span style="color:var(--amber);font-size:12px">(D+16)</span></div>
+        <div class="tag"><strong>계약금액</strong>₩82,000,000 <span class="text-muted-sm">(VAT 별도)</span></div>
+        <div class="tag"><strong>기준일</strong>2026. 06. 17 <span class="text-amber-sm">(D+16)</span></div>
       </div>
     </div>
     <div class="slide-footer">대성마이맥 필기앱 구축 및 기술공급 · 뉴런소프트</div>
@@ -37,10 +37,10 @@
     <div class="slide-inner">
       <p class="eyebrow">Contract Summary</p>
       <h2>계약 핵심 조건</h2>
-      <div class="grid-3" style="margin-bottom:16px">
+      <div class="grid-3 grid-spaced">
         <div class="card">
           <div class="label">용역명</div>
-          <div class="value" style="font-size:1rem">대성마이맥 필기앱<br>구축 및 기술공급</div>
+          <div class="value value-sm">대성마이맥 필기앱<br>구축 및 기술공급</div>
         </div>
         <div class="card">
           <div class="label">계약 체결 · 착수</div>
@@ -56,7 +56,7 @@
       <div class="grid-2">
         <div class="card">
           <div class="label">납품물</div>
-          <ul style="list-style:none;font-size:13px;color:var(--muted);margin-top:8px;line-height:1.8">
+          <ul class="card-list">
             <li>① 필기 엔진 SDK (AOS / iOS)</li>
             <li>② PDF 뷰어 및 필기 기능</li>
             <li>③ 화면설계서 기반 앱 기능 구현</li>
@@ -66,13 +66,13 @@
         </div>
         <div class="card">
           <div class="label">붙임 서류 (계약 범위)</div>
-          <ul style="list-style:none;font-size:13px;color:var(--muted);margin-top:8px;line-height:1.8">
+          <ul class="card-list">
             <li>1. 용역계약 일반조건</li>
             <li>2. 화면설계서 (3차)</li>
             <li>3. 개발일정표 (WBS)</li>
             <li>4. 견적서</li>
           </ul>
-          <div class="note-box" style="margin-top:12px">
+          <div class="note-box note-box-tight">
             <strong>착수일</strong> = 2026. 06. 01 (계약 체결 + 계약금 30%)<br>
             <strong>계약 유효기간</strong> = ~ 2027. 12. 31
           </div>
@@ -136,10 +136,11 @@
 
   <!-- SLIDE 4: WBS 개발 일정 -->
   <section class="slide" id="s4">
-    <div class="slide-inner">
+    <div class="slide-inner slide-inner--dense">
       <p class="eyebrow">WBS · Development Schedule</p>
       <h2>개발 단계별 일정 (2026. 06. 01 → 09. 17)</h2>
 
+      <div class="wbs-scroll">
       <div class="wbs-chart">
         <div class="wbs-months">
           <span>단계</span><span>기간</span>
@@ -151,45 +152,44 @@
           <div class="gantt-today" style="left:14.8%"></div>
         </div>
         <div class="wbs-rows">
-
-      <div class="wbs-row">
-        <span>프로필·서재</span><span>06.01–14</span>
-        <div class="wbs-bar-wrap"><div class="wbs-bar" style="left:0%;width:13%"></div></div>
-      </div>
-      <div class="wbs-row">
-        <span>PDF 뷰어 ★</span><span>06.17–07.15</span>
-        <div class="wbs-bar-wrap"><div class="wbs-bar" style="left:14.8%;width:28%"></div></div>
-      </div>
-      <div class="wbs-row">
-        <span>필기 개발 ★</span><span>06.23–07.25</span>
-        <div class="wbs-bar-wrap"><div class="wbs-bar ink" style="left:20%;width:30%"></div></div>
-      </div>
-      <div class="wbs-row">
-        <span>API 명세</span><span>06.10–07.31</span>
-        <div class="wbs-bar-wrap"><div class="wbs-bar api" style="left:8%;width:35%"></div></div>
-      </div>
-      <div class="wbs-row">
-        <span>백업·동기화</span><span>07.28–08.01</span>
-        <div class="wbs-bar-wrap"><div class="wbs-bar" style="left:52%;width:6%"></div></div>
-      </div>
-      <div class="wbs-row">
-        <span>안드 필기 SDK</span><span>08.04–15</span>
-        <div class="wbs-bar-wrap"><div class="wbs-bar sdk" style="left:58%;width:12%"></div></div>
-      </div>
-      <div class="wbs-row">
-        <span>iOS 필기 SDK</span><span>08.18–29</span>
-        <div class="wbs-bar-wrap"><div class="wbs-bar sdk" style="left:72%;width:12%"></div></div>
-      </div>
-      <div class="wbs-row">
-        <span>API 연동</span><span>09.01–12</span>
-        <div class="wbs-bar-wrap"><div class="wbs-bar api" style="left:83%;width:11%"></div></div>
-      </div>
-      <div class="wbs-row">
-        <span>통합 QA · UAT</span><span>08.25–09.17</span>
-        <div class="wbs-bar-wrap"><div class="wbs-bar qa" style="left:76%;width:24%"></div></div>
-      </div>
-
+          <div class="wbs-row">
+            <span class="wbs-label">프로필·서재</span><span class="wbs-dates">06.01–14</span>
+            <div class="wbs-bar-wrap"><div class="wbs-bar" style="left:0%;width:13%"></div></div>
+          </div>
+          <div class="wbs-row">
+            <span class="wbs-label">PDF 뷰어 ★</span><span class="wbs-dates">06.17–07.15</span>
+            <div class="wbs-bar-wrap"><div class="wbs-bar" style="left:14.8%;width:28%"></div></div>
+          </div>
+          <div class="wbs-row">
+            <span class="wbs-label">필기 개발 ★</span><span class="wbs-dates">06.23–07.25</span>
+            <div class="wbs-bar-wrap"><div class="wbs-bar ink" style="left:20%;width:30%"></div></div>
+          </div>
+          <div class="wbs-row">
+            <span class="wbs-label">API 명세</span><span class="wbs-dates">06.10–07.31</span>
+            <div class="wbs-bar-wrap"><div class="wbs-bar api" style="left:8%;width:35%"></div></div>
+          </div>
+          <div class="wbs-row">
+            <span class="wbs-label">백업·동기화</span><span class="wbs-dates">07.28–08.01</span>
+            <div class="wbs-bar-wrap"><div class="wbs-bar" style="left:52%;width:6%"></div></div>
+          </div>
+          <div class="wbs-row">
+            <span class="wbs-label">안드 필기 SDK</span><span class="wbs-dates">08.04–15</span>
+            <div class="wbs-bar-wrap"><div class="wbs-bar sdk" style="left:58%;width:12%"></div></div>
+          </div>
+          <div class="wbs-row">
+            <span class="wbs-label">iOS 필기 SDK</span><span class="wbs-dates">08.18–29</span>
+            <div class="wbs-bar-wrap"><div class="wbs-bar sdk" style="left:72%;width:12%"></div></div>
+          </div>
+          <div class="wbs-row">
+            <span class="wbs-label">API 연동</span><span class="wbs-dates">09.01–12</span>
+            <div class="wbs-bar-wrap"><div class="wbs-bar api" style="left:83%;width:11%"></div></div>
+          </div>
+          <div class="wbs-row">
+            <span class="wbs-label">통합 QA · UAT</span><span class="wbs-dates">08.25–09.17</span>
+            <div class="wbs-bar-wrap"><div class="wbs-bar qa" style="left:76%;width:24%"></div></div>
+          </div>
         </div>
+      </div>
       </div>
 
       <div class="note-box">
@@ -207,6 +207,7 @@
       <p class="eyebrow">Payment Schedule</p>
       <h2>대금 지급 일정</h2>
 
+      <div class="table-wrap">
       <table>
         <thead>
           <tr>
@@ -241,16 +242,17 @@
           </tr>
         </tbody>
       </table>
+      </div>
 
-      <div class="grid-2" style="margin-top:20px">
+      <div class="grid-2 grid-spaced">
         <div class="card">
           <div class="label">지체상금 (을 부담)</div>
-          <div class="value" style="font-size:1rem">일 ₩164,000</div>
+          <div class="value value-md">일 ₩164,000</div>
           <div class="desc">계약금액 × 2/1,000 · 기간 종료 10일 전 연장 요청 필요</div>
         </div>
         <div class="card">
           <div class="label">지연 면제 사유</div>
-          <div class="desc" style="font-size:13px;line-height:1.7;margin-top:4px">
+          <div class="desc desc-loose">
             ① 갑 자료 미제공 · 검토·의사결정 지연<br>
             ② 천재지변 · 전산장애<br>
             ③ 추가 요구사항 협의 기간
@@ -302,18 +304,18 @@
           </div>
         </div>
         <div>
-          <div class="card" style="margin-bottom:14px">
+          <div class="card card-mb">
             <div class="label">검수 예상 종료 (참고)</div>
-            <div class="value" style="font-size:1.1rem">~ 2027. 01 중순</div>
+            <div class="value value-md">~ 2027. 01 중순</div>
             <div class="desc">09.17 납품 + 90영업일 기준 추정<br>(공휴일·갑 검토 일정에 따라 변동)</div>
           </div>
           <div class="card">
             <div class="label">서비스 시작일</div>
-            <div class="value" style="font-size:1.1rem">검수 종료 후 180일 이내</div>
-            <div class="desc" style="margin-top:10px;line-height:1.8">
-              <strong style="color:var(--green)">SDK 하자보수</strong> — 서비스 시작일 + 1년<br>
-              <strong style="color:var(--amber)">앱 버그·오동작</strong> — 서비스 시작일 + 90일<br>
-              <span style="color:var(--muted)">범위 외: OS 업데이트, 정책·디자인 변경, 제3자 이슈</span>
+            <div class="value value-md">검수 종료 후 180일 이내</div>
+            <div class="desc desc-stack">
+              <strong class="text-green">SDK 하자보수</strong> — 서비스 시작일 + 1년<br>
+              <strong class="text-amber">앱 버그·오동작</strong> — 서비스 시작일 + 90일<br>
+              <span class="text-muted">범위 외: OS 업데이트, 정책·디자인 변경, 제3자 이슈</span>
             </div>
           </div>
         </div>
@@ -355,7 +357,7 @@
         </div>
       </div>
 
-      <div class="note-box" style="margin-top:20px">
+      <div class="note-box note-spaced">
         <strong>범위 외 변경</strong> — 기능 추가 · 정책 변경 · 디자인 변경은 별도 협의 후 범위·일정·비용 재산정 (별도 계약/합의서).
         <strong>재위탁</strong> — 갑 사전 서면 동의 없이 제3자 위탁 불가.
       </div>
@@ -365,10 +367,11 @@
 
   <!-- SLIDE 8: 마일스톤 체크리스트 -->
   <section class="slide" id="s8">
-    <div class="slide-inner">
+    <div class="slide-inner slide-inner--dense">
       <p class="eyebrow">Milestone Checklist</p>
       <h2>핵심 마일스톤 체크리스트</h2>
 
+      <div class="table-wrap">
       <table>
         <thead>
           <tr>
@@ -401,13 +404,13 @@
             <td><strong>PDF 뷰어</strong></td>
             <td>2026. 06. 17 ~ 07. 15</td>
             <td>PDFium · 검색 · 멀티탭 · 노트 레이어</td>
-            <td><span class="badge badge-current">우선 개발</span></td>
+            <td><span class="badge badge-priority">우선 개발</span></td>
           </tr>
           <tr>
             <td><strong>필기 엔진 이식</strong></td>
             <td>2026. 06. 23 ~ 07. 25</td>
             <td>펜 · 지우개 · OMR/스크랩 · Undo</td>
-            <td><span class="badge badge-current">우선 개발</span></td>
+            <td><span class="badge badge-priority">우선 개발</span></td>
           </tr>
           <tr>
             <td>백업 · 동기화</td>
@@ -453,6 +456,7 @@
           </tr>
         </tbody>
       </table>
+      </div>
     </div>
     <div class="slide-footer">계약 2026.06.01 → 납품 2026.09.17 · 2026. 06. 17 (D+16) 기준</div>
   </section>

@@ -100,9 +100,13 @@ body {
 
 .slide-inner {
   width: min(var(--slide-w), 100%);
-  max-height: var(--slide-h);
+  max-width: 100%;
   position: relative;
   z-index: 1;
+}
+
+.slide-inner--dense {
+  width: 100%;
 }
 
 .slide-footer {
@@ -181,6 +185,10 @@ h3 {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 16px;
+}
+
+.slide-inner > .grid-2 {
+  margin-top: 16px;
 }
 
 .grid-3 {
@@ -606,6 +614,77 @@ tr:last-child td {
 .badge-current { background: rgba(245, 158, 11, 0.2); color: var(--amber); }
 .badge-future { background: rgba(148, 163, 184, 0.15); color: var(--muted); }
 .badge-contract { background: rgba(59, 130, 246, 0.2); color: var(--accent); }
+.badge-priority { background: rgba(124, 58, 237, 0.22); color: #c4b5fd; }
+
+/* ── 유틸 ── */
+.grid-spaced { margin-top: 20px; }
+.note-spaced { margin-top: 20px; }
+.note-box-tight { margin-top: 12px; }
+.card-list {
+  list-style: none;
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 8px;
+  line-height: 1.8;
+}
+.value-sm { font-size: 1rem; }
+.value-md { font-size: 1.1rem; }
+.desc-loose { font-size: 13px; line-height: 1.7; margin-top: 4px; }
+.desc-stack { margin-top: 10px; line-height: 1.8; }
+.text-muted-sm { color: var(--muted); font-size: 12px; }
+.text-amber-sm { color: var(--amber); font-size: 12px; }
+.text-green { color: var(--green); }
+.text-amber { color: var(--amber); }
+.text-muted { color: var(--muted); }
+.card-mb { margin-bottom: 14px; }
+
+.table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  margin-top: 4px;
+}
+
+.table-wrap table {
+  margin: 0;
+  min-width: 520px;
+}
+
+.table-wrap th:first-child,
+.table-wrap td:first-child {
+  position: sticky;
+  left: 0;
+  z-index: 1;
+  background: var(--bg-card);
+  box-shadow: 2px 0 6px rgba(0, 0, 0, 0.15);
+}
+
+.table-wrap tr:last-child td { border-bottom: none; }
+
+.wbs-scroll {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin-bottom: 4px;
+}
+
+.wbs-scroll .wbs-chart {
+  min-width: min(100%, 560px);
+}
+
+.wbs-label {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.wbs-dates {
+  white-space: nowrap;
+  font-size: 11px;
+  color: var(--muted);
+}
 
 /* ── WBS 간트 스타일 ── */
 .wbs-rows {
@@ -695,6 +774,226 @@ tr:last-child td {
 .role-box.eul h3 { color: #4ade80; }
 
 /* ══════════════════════════════════════
+   반응형 — 모바일 · 태블릿 · 데스크톱
+   ══════════════════════════════════════ */
+
+/* 태블릿 이하 */
+@media (max-width: 1024px) {
+  :root {
+    --slide-w: 100%;
+  }
+
+  .slide {
+    padding: 64px 20px 48px;
+    align-items: flex-start;
+    min-height: 100vh;
+    min-height: 100dvh;
+    height: auto;
+    overflow: visible;
+  }
+
+  .slide-inner--dense {
+    max-height: calc(100dvh - 100px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding-right: 4px;
+  }
+
+  .grid-3 {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .grid-3 .card:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .wbs-chart {
+    --wbs-col1: 108px;
+    --wbs-col2: 84px;
+    --wbs-gap: 10px;
+  }
+}
+
+/* 모바일 */
+@media (max-width: 768px) {
+  html {
+    scroll-snap-type: y proximity;
+  }
+
+  .screen-nav {
+    flex-wrap: wrap;
+    gap: 8px 12px;
+    padding: max(8px, env(safe-area-inset-top)) 12px 8px;
+  }
+
+  .screen-nav .brand {
+    flex: 1 1 auto;
+    font-size: 12px;
+    min-width: 0;
+  }
+
+  .screen-nav .hint {
+    order: 3;
+    flex: 1 1 100%;
+    font-size: 11px;
+    text-align: center;
+  }
+
+  .screen-nav button {
+    flex-shrink: 0;
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+
+  .slide {
+    padding: 56px 16px 44px;
+  }
+
+  h1 { font-size: clamp(1.65rem, 7vw, 2.2rem); }
+  h2 { font-size: clamp(1.25rem, 5vw, 1.6rem); margin-bottom: 14px; }
+  .subtitle { font-size: 1rem; }
+
+  .cover-meta {
+    gap: 10px;
+    margin-top: 24px;
+  }
+
+  .cover-meta .tag {
+    flex: 1 1 calc(50% - 10px);
+    min-width: 140px;
+    padding: 10px 14px;
+    font-size: 13px;
+  }
+
+  .grid-2,
+  .grid-3,
+  .role-cols,
+  .timeline-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .grid-3 .card:last-child {
+    grid-column: auto;
+  }
+
+  .card {
+    padding: 14px 16px;
+  }
+
+  .timeline-master {
+    max-width: none;
+  }
+
+  .timeline-master .tl-item {
+    padding-bottom: 12px;
+  }
+
+  .tl-title { font-size: 14px; }
+  .tl-desc { font-size: 11px; }
+
+  .wbs-chart {
+    --wbs-col1: 92px;
+    --wbs-col2: 76px;
+    --wbs-gap: 8px;
+  }
+
+  .wbs-row {
+    font-size: 11px;
+    padding: 6px 0;
+  }
+
+  .wbs-bar-wrap {
+    height: 20px;
+  }
+
+  .wbs-bar {
+    height: 14px;
+  }
+
+  .gantt-today::before {
+    font-size: 9px;
+    padding: 1px 4px;
+  }
+
+  .table-wrap table {
+    font-size: 12px;
+    min-width: 480px;
+  }
+
+  th, td {
+    padding: 8px 10px;
+  }
+
+  .slide-footer {
+    font-size: 10px;
+    padding: 0 12px;
+    bottom: 12px;
+  }
+
+  .note-box {
+    font-size: 11px;
+    padding: 10px 12px;
+  }
+}
+
+/* 소형 모바일 */
+@media (max-width: 480px) {
+  .screen-nav .hint {
+    display: none;
+  }
+
+  .cover-meta .tag {
+    flex: 1 1 100%;
+  }
+
+  .wbs-scroll .wbs-chart {
+    min-width: 520px;
+  }
+
+  .badge {
+    font-size: 10px;
+    padding: 2px 6px;
+  }
+}
+
+/* 데스크톱 — 슬라이드 중앙 정렬 */
+@media (min-width: 1025px) {
+  .slide {
+    align-items: center;
+    overflow: hidden;
+  }
+
+  .slide-inner--dense {
+    max-height: calc(100vh - 130px);
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: var(--border) transparent;
+  }
+
+  .slide-inner--dense::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .slide-inner--dense::-webkit-scrollbar-thumb {
+    background: var(--border);
+    border-radius: 3px;
+  }
+}
+
+/* 터치 기기 — hover 없음 */
+@media (hover: none) {
+  .screen-nav button:active {
+    filter: brightness(1.15);
+  }
+}
+
+/* 애니메이션 줄이기 */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .tl-item.current::before { animation: none; }
+}
+
+/* ══════════════════════════════════════
    Chrome 인쇄 — 슬라이드 1장 = 1페이지
    ══════════════════════════════════════ */
 @media print {
@@ -722,13 +1021,52 @@ tr:last-child td {
     height: 100vh;
     min-height: 100vh;
     max-height: 100vh;
-    padding: 32px 40px 28px;
+    padding: 28px 36px 24px;
     page-break-after: always;
     break-after: page;
     page-break-inside: avoid;
     break-inside: avoid;
     overflow: hidden;
     background: var(--bg) !important;
+    align-items: center;
+  }
+
+  .slide-inner--dense {
+    max-height: calc(100vh - 56px);
+    overflow: hidden;
+  }
+
+  .table-wrap,
+  .wbs-scroll {
+    overflow: visible;
+    border: none;
+  }
+
+  .table-wrap table {
+    min-width: 0;
+    font-size: 11px;
+  }
+
+  .table-wrap th:first-child,
+  .table-wrap td:first-child {
+    position: static;
+    box-shadow: none;
+  }
+
+  th, td {
+    padding: 6px 8px;
+  }
+
+  .wbs-scroll .wbs-chart {
+    min-width: 0;
+  }
+
+  #s8 .table-wrap table {
+    font-size: 10px;
+  }
+
+  #s8 th, #s8 td {
+    padding: 5px 6px;
   }
 
   .slide:last-child {

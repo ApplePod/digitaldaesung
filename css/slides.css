@@ -502,18 +502,22 @@ h3 {
   max-width: 100%;
 }
 
-.timeline-master-col {
-  --tl-axis: 14px;
-  padding-left: calc(var(--tl-axis) + 18px);
+/* padding은 tl-item에만 — 선·동그라미는 timeline 좌측 축에 고정 */
+.timeline.timeline-master-col {
+  --tl-axis: 16px;
+  --tl-gap: 14px;
+  padding-left: 0;
 }
 
 .timeline-master-col::before {
   left: var(--tl-axis);
+  top: 10px;
+  bottom: 10px;
   transform: translateX(-50%);
 }
 
 .timeline-master-col .tl-item {
-  padding: 0 0 14px 0;
+  padding: 0 0 14px calc(var(--tl-axis) + var(--tl-gap));
 }
 
 .timeline-master-col .tl-item:last-child {
@@ -522,7 +526,7 @@ h3 {
 
 .timeline-master-col .tl-item::before {
   left: var(--tl-axis);
-  top: 7px;
+  top: 8px;
   transform: translateX(-50%);
 }
 

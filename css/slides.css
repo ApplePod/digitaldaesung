@@ -484,6 +484,16 @@ h3 {
   columns: unset;
 }
 
+/* Master Timeline 슬라이드 — 단일 열 */
+.timeline-master {
+  margin-top: 16px;
+  max-width: 720px;
+}
+
+.timeline-master .tl-item {
+  padding-bottom: 16px;
+}
+
 /* WBS 월 눈금 + 오늘 표시 */
 .wbs-chart {
   --wbs-col1: 140px;

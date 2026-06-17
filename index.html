@@ -88,102 +88,46 @@
       <p class="eyebrow">Master Timeline</p>
       <h2>계약 → 납품 → 검수 → 서비스 전체 흐름</h2>
 
-      <div class="bar-timeline">
-        <div class="bar-track">
-          <div class="bar-fill" style="width:14.8%"></div>
-          <div class="bar-marker" style="left:0%" data-label="계약"></div>
-          <div class="bar-marker" style="left:100%;background:var(--green)" data-label="납품"></div>
+      <div class="timeline timeline-master">
+        <div class="tl-item done">
+          <div class="tl-date">2026. 06. 01</div>
+          <div class="tl-title">계약 체결 · 착수</div>
+          <div class="tl-desc">외주용역계약 · 계약금 30% · Android 착수</div>
         </div>
-        <div class="bar-labels">
-          <span>2026. 06. 01 계약·착수</span>
-          <span>2026. 06. 17 (D+16 · 15%)</span>
-          <span>2026. 09. 17 1차 납품</span>
+        <div class="tl-item current">
+          <div class="tl-date">2026. 06. 17 ~ ★</div>
+          <div class="tl-title">PDF 뷰어 · 필기 우선</div>
+          <div class="tl-desc">뷰어·필기 선행 · API 명세 병행 진행중</div>
         </div>
-      </div>
-
-      <div class="phase-block">
-        <div class="phase-block-title">개발 단계 일정 (06. 01 → 09. 17)</div>
-        <div class="phase-months">
-          <div class="phase-month">6월</div>
-          <div class="phase-month">7월</div>
-          <div class="phase-month">8월</div>
-          <div class="phase-month">9월</div>
+        <div class="tl-item current">
+          <div class="tl-date">2026. 06 ~ 07</div>
+          <div class="tl-title">프로필 · 서재 · API</div>
+          <div class="tl-desc">앱 셸 · 폴더링 · 스펙 협의</div>
         </div>
-        <div class="phase-track-wrap">
-          <div class="phase-today" style="left:14.8%"></div>
-          <div class="phase-track">
-            <div class="phase-seg p-shell" style="width:12%">셸·서재</div>
-            <div class="phase-seg p-viewer" style="width:28%">PDF 뷰어 ★</div>
-            <div class="phase-seg p-ink" style="width:26%">필기 ★</div>
-            <div class="phase-seg p-sdk" style="width:14%">SDK</div>
-            <div class="phase-seg p-api" style="width:8%">API연동</div>
-            <div class="phase-seg p-qa" style="width:17%">QA·UAT</div>
-            <div class="phase-seg p-ship" style="width:5%">납품</div>
-          </div>
+        <div class="tl-item future">
+          <div class="tl-date">2026. 08</div>
+          <div class="tl-title">SDK · API 연동</div>
+          <div class="tl-desc">AOS/iOS SDK · 실서버 연결</div>
         </div>
-        <div class="phase-legend">
-          <span class="legend-shell">셸·서재</span>
-          <span class="legend-viewer">PDF 뷰어 (우선)</span>
-          <span class="legend-ink">필기 엔진 (우선)</span>
-          <span class="legend-sdk">AOS/iOS SDK</span>
-          <span class="legend-api">실서버 API</span>
-          <span class="legend-qa">통합 QA</span>
+        <div class="tl-item future">
+          <div class="tl-date">2026. 08. 25 ~ 09. 16</div>
+          <div class="tl-title">통합 QA · UAT</div>
+          <div class="tl-desc">회귀 · 성능 · 인수 테스트</div>
         </div>
-      </div>
-
-      <div class="phase-block" style="margin-top:14px">
-        <div class="phase-block-title">납품 이후 (계약서 기준)</div>
-        <div class="phase-track" style="height:28px">
-          <div class="phase-seg p-api" style="width:55%;font-size:9px">검수 90영업일 (~2027. 01)</div>
-          <div class="phase-seg p-qa" style="width:25%;font-size:9px">하자보수</div>
-          <div class="phase-seg p-ship" style="width:20%;font-size:9px">잔금 70%</div>
+        <div class="tl-item future">
+          <div class="tl-date">2026. 09. 17</div>
+          <div class="tl-title">1차 납품 통보</div>
+          <div class="tl-desc">결과물 전달 · 검수 시작</div>
         </div>
-      </div>
-
-      <div class="timeline-grid">
-        <div class="timeline">
-          <div class="tl-item done">
-            <div class="tl-date">2026. 06. 01</div>
-            <div class="tl-title">계약 체결 · 착수</div>
-            <div class="tl-desc">외주용역계약 · 계약금 30% · Android 착수</div>
-          </div>
-          <div class="tl-item current">
-            <div class="tl-date">2026. 06. 17 ~ ★</div>
-            <div class="tl-title">PDF 뷰어 · 필기 우선</div>
-            <div class="tl-desc">뷰어·필기 선행 · API 명세 병행 진행중</div>
-          </div>
-          <div class="tl-item current">
-            <div class="tl-date">2026. 06 ~ 07</div>
-            <div class="tl-title">프로필 · 서재 · API</div>
-            <div class="tl-desc">앱 셸 · 폴더링 · 스펙 협의</div>
-          </div>
-          <div class="tl-item future">
-            <div class="tl-date">2026. 08</div>
-            <div class="tl-title">SDK · API 연동</div>
-            <div class="tl-desc">AOS/iOS SDK · 실서버 연결</div>
-          </div>
+        <div class="tl-item future">
+          <div class="tl-date">+ 90영업일</div>
+          <div class="tl-title">검수 · 최종 납품</div>
+          <div class="tl-desc">하자보수 60일 · 묵시승인 가능</div>
         </div>
-        <div class="timeline">
-          <div class="tl-item future">
-            <div class="tl-date">2026. 08. 25 ~ 09. 16</div>
-            <div class="tl-title">통합 QA · UAT</div>
-            <div class="tl-desc">회귀 · 성능 · 인수 테스트</div>
-          </div>
-          <div class="tl-item future">
-            <div class="tl-date">2026. 09. 17</div>
-            <div class="tl-title">1차 납품 통보</div>
-            <div class="tl-desc">결과물 전달 · 검수 시작</div>
-          </div>
-          <div class="tl-item future">
-            <div class="tl-date">+ 90영업일</div>
-            <div class="tl-title">검수 · 최종 납품</div>
-            <div class="tl-desc">하자보수 60일 · 묵시승인 가능</div>
-          </div>
-          <div class="tl-item future">
-            <div class="tl-date">검수 완료 후</div>
-            <div class="tl-title">잔금 70% · 서비스</div>
-            <div class="tl-desc">₩57,400,000 · 오픈 180일 이내</div>
-          </div>
+        <div class="tl-item future">
+          <div class="tl-date">검수 완료 후</div>
+          <div class="tl-title">잔금 70% · 서비스</div>
+          <div class="tl-desc">₩57,400,000 · 오픈 180일 이내</div>
         </div>
       </div>
     </div>
